@@ -3,171 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Su Bin Choi - Portfolio</title>
+    <meta name="description" content="Academic CV and research profile of Su Bin Choi, Department of Chemistry, KAIST.">
+    <title>Su Bin Choi | Curriculum Vitae</title>
     <style>
         :root {
-            --primary-color: #004191; /* Academic Blue */
-            --text-color: #333333;
-            --bg-color: #f9f9fa;
-            --section-bg: #ffffff;
-            --border-color: #e1e4e8;
+            --ink: #1f2933;
+            --muted: #5f6f7d;
+            --line: #d7dee7;
+            --paper: #ffffff;
+            --wash: #f5f7fa;
+            --blue: #004191;
+            --teal: #007c89;
+            --gold: #b98313;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
+            color: var(--ink);
+            background: var(--wash);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
         }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 5px 0;
-            font-size: 1.1em;
-            color: #e0e0e0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            background-color: var(--section-bg);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
-        }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        .item {
-            margin-bottom: 15px;
-        }
-        .item-title {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .item-meta {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
+
         a {
-            color: var(--primary-color);
+            color: var(--blue);
             text-decoration: none;
         }
-        a:hover {
+
+        a:hover,
+        a:focus {
             text-decoration: underline;
+        }
+
+        .site-header {
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(0, 65, 145, 0.96), rgba(0, 124, 137, 0.92)),
+                radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.18), transparent 28%);
+        }
+
+        .hero {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 54px 0 36px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.4rem, 6vw, 4.7rem);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .subtitle {
+            max-width: 720px;
+            margin: 18px 0 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.12rem;
+        }
+
+        .contact-card {
+            min-width: 300px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-card p {
+            margin: 0 0 8px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.96rem;
+        }
+
+        .contact-card a {
+            color: #ffffff;
+            font-weight: 650;
+        }
+
+        .nav-wrap {
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(0, 29, 65, 0.2);
+        }
+
+        nav {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        nav a {
+            flex: 0 0 auto;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.92rem;
+            font-weight: 650;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: rgba(255, 255, 255, 0.14);
+            text-decoration: none;
+        }
+
+        main {
+            width: min(1120px, calc(100% - 40px));
+            margin: 34px auto 56px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        section,
+        aside {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 10px 28px rgba(31, 41, 51, 0.05);
+        }
+
+        section {
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        aside {
+            position: sticky;
+            top: 18px;
+            padding: 24px;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            color: var(--blue);
+            font-size: 1.35rem;
+            line-height: 1.25;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.02rem;
+            line-height: 1.35;
+        }
+
+        .item {
+            padding-top: 18px;
+            margin-top: 18px;
+            border-top: 1px solid var(--line);
+        }
+
+        .item:first-of-type {
+            padding-top: 0;
+            margin-top: 0;
+            border-top: 0;
+        }
+
+        .meta {
+            margin: 5px 0 6px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tags li {
+            padding: 6px 10px;
+            border: 1px solid #cbd8e4;
+            border-radius: 999px;
+            color: #254052;
+            background: #f7fafc;
+            font-size: 0.9rem;
+            font-weight: 650;
+        }
+
+        .publication {
+            margin: 0;
+        }
+
+        .publication strong {
+            color: var(--ink);
+        }
+
+        .status {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .sidebar-title {
+            margin: 0 0 12px;
+            color: var(--blue);
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .sidebar-list {
+            padding: 0;
+            margin: 0 0 22px;
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            padding: 10px 0;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .sidebar-list li:first-child {
+            border-top: 0;
+        }
+
+        .callout {
+            padding: 16px;
+            border-left: 4px solid var(--teal);
+            border-radius: 6px;
+            background: #f1fbfc;
+            color: #1e4950;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 28px 20px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 860px) {
+            .hero,
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                min-width: 0;
+            }
+
+            aside {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero,
+            nav,
+            main {
+                width: min(100% - 28px, 1120px);
+            }
+
+            section,
+            aside {
+                padding: 22px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Su Bin Choi [cite: 1]</h1>
-        <p>Nanotectonics Laboratory, Department of Chemistry [cite: 2, 3]</p>
-        <p>Korea Advanced Institute of Science and Technology (KAIST) [cite: 3]</p>
-        <p>Email: <a href="mailto:subintg@kaist.ac.kr" style="color: #66b3ff;">subintg@kaist.ac.kr</a> | <a href="mailto:1234subintg@gmail.com" style="color: #66b3ff;">1234subintg@gmail.com</a> [cite: 5]</p>
+    <header class="site-header">
+        <div class="hero">
+            <div>
+                <p class="eyebrow">Curriculum Vitae</p>
+                <h1>Su Bin Choi</h1>
+                <p class="subtitle">
+                    Ph.D. candidate in Chemistry at KAIST, working on noble metal nanoparticles,
+                    functional assembly nanostructures, and catalytic materials.
+                </p>
+            </div>
+            <div class="contact-card" aria-label="Contact information">
+                <p>Nanotectonics Laboratory</p>
+                <p>Department of Chemistry, KAIST</p>
+                <p><a href="mailto:subintg@kaist.ac.kr">subintg@kaist.ac.kr</a></p>
+                <p><a href="mailto:1234subintg@gmail.com">1234subintg@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="nav-wrap">
+            <nav aria-label="CV sections">
+                <a href="#education">Education</a>
+                <a href="#interests">Interests</a>
+                <a href="#publications">Publications</a>
+                <a href="#patents">Patents</a>
+                <a href="#skills">Skills</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#references">References</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <section id="education">
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-title">Ph.D. in Chemistry [cite: 8]</div>
-                <div class="item-meta">KAIST, Republic of Korea | Mar. 2022 – Feb. 2028 [cite: 7]</div>
-                <div>Advisor: Prof. Sang Woo Han [cite: 8]</div>
-            </div>
-            <div class="item">
-                <div class="item-title">B.S. in Chemistry, Minor in Materials Science and Engineering [cite: 10]</div>
-                <div class="item-meta">KAIST, Republic of Korea | Mar. 2018 – Feb. 2022 [cite: 9]</div>
-                <div>Advisor: Prof. Hyunwoo Kim [cite: 10]</div>
-            </div>
-        </section>
+    <main>
+        <div>
+            <section id="education">
+                <h2>Education</h2>
+                <article class="item">
+                    <h3>Ph.D. in Chemistry</h3>
+                    <p class="meta">Korea Advanced Institute of Science and Technology (KAIST), Republic of Korea | Mar. 2022 - Feb. 2028</p>
+                    <p>Advisor: Prof. Sang Woo Han</p>
+                </article>
+                <article class="item">
+                    <h3>B.S. in Chemistry, Minor in Materials Science and Engineering</h3>
+                    <p class="meta">Korea Advanced Institute of Science and Technology (KAIST), Republic of Korea | Mar. 2018 - Feb. 2022</p>
+                    <p>Advisor: Prof. Hyunwoo Kim</p>
+                </article>
+            </section>
 
-        <section id="research-interests">
-            <h2>Research Interests</h2>
-            <ul>
-                <li><strong>Noble Metal Nanoparticle:</strong> Design, Synthesis and Characterization of Noble Metal Nanoparticles (Au, Ag, Pd, Pt) [cite: 14]</li>
-                <li><strong>Assembly Nanostructure:</strong> Assembly and functional nanostructures for catalysis [cite: 15]</li>
+            <section id="interests">
+                <h2>Research Interests</h2>
+                <article class="item">
+                    <h3>Noble Metal Nanoparticles</h3>
+                    <p>Design, synthesis, and characterization of noble metal nanoparticles including Au, Ag, Pd, and Pt.</p>
+                </article>
+                <article class="item">
+                    <h3>Assembly Nanostructures</h3>
+                    <p>Assembly and functional nanostructures for catalysis.</p>
+                </article>
+            </section>
+
+            <section id="honors">
+                <h2>Honors &amp; Awards</h2>
+                <article class="item">
+                    <h3>Best Poster Award</h3>
+                    <p class="meta">Bulletin of the Korean Chemical Society (BKCS) | Jul. 2025</p>
+                    <p>Korean Chemical Society (KCS), Materials Chemistry Division Summer Symposium.</p>
+                </article>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <article class="item">
+                    <p class="publication">
+                        <strong>S. B. Choi</strong>, B. S. Goo, K. H. Cho, S. Lee, Y. Kim, Y. Kwon,
+                        J. W. Baek, S. Han, Y. M. Rhee*, and S. W. Han*.
+                        "Controlling the Chemoselectivity of Palladium Nanocatalysts with Halobenzene
+                        Surface Ligands for Alkyne Semihydrogenation."
+                        <em>ACS Catalysis</em>, 2026, <span class="status">submitted</span>.
+                    </p>
+                </article>
+                <article class="item">
+                    <p class="publication">
+                        Y. Kwon, <strong>S. B. Choi</strong>, M. Kim, B. S. Goo, Y. W. Lee,
+                        J. W. Hong, and S. W. Han*.
+                        "One-Pot Synthesis of Bicontinuous Palladium Nanocubes with Distinct Catalytic
+                        Properties for Various Electrocatalysis and Heterogeneous Catalysis."
+                        <em>Nano Letters</em>, 2025, 25 (3), 1226-1232.
+                    </p>
+                </article>
+            </section>
+
+            <section id="patents">
+                <h2>Patents</h2>
+                <article class="item">
+                    <p>
+                        S. W. Han, B. S. Goo, K. H. Cho, S. B. Choi, S. Lee, Y. Kim,
+                        J. W. Baek, S. Han, and Y. M. Rhee.
+                        "Metal nanoparticle catalyst, method for their preparation, and method for the
+                        synthesis of alkene compounds using the same."
+                        Korean Patent No. 10-2878255.
+                    </p>
+                </article>
+            </section>
+
+            <section id="skills">
+                <h2>Research Skills</h2>
+                <article class="item">
+                    <h3>Synthesis of Materials</h3>
+                    <p>Synthesis of nanoparticles such as Au, Ag, Pd, Pt, and silica, and metal-organic frameworks such as ZIF-8, ZIF-67, and bio-MOF.</p>
+                </article>
+                <article class="item">
+                    <h3>Characterization</h3>
+                    <p>SEM, TEM, EDS analysis, tomography, XPS, UPS, XRD, GC-MS, ICP-OES, FT-IR, DLS, UV-Vis spectroscopy, Raman spectroscopy, and NMR.</p>
+                </article>
+                <article class="item">
+                    <h3>Computational Methods</h3>
+                    <p>DFT calculations using Quantum ESPRESSO and molecular dynamics simulations using LAMMPS.</p>
+                </article>
+            </section>
+
+            <section id="teaching">
+                <h2>Teaching Experience</h2>
+                <article class="item">
+                    <h3>Teaching Assistant, General Chemistry I (Theory)</h3>
+                    <p class="meta">Department of Chemistry, KAIST | Spring 2023, Spring 2024, Spring 2025</p>
+                </article>
+                <article class="item">
+                    <h3>Teaching Assistant, Advanced Chemistry Experiment (Laboratory)</h3>
+                    <p class="meta">Department of Chemistry, KAIST | Fall 2022, Fall 2023, Fall 2024</p>
+                </article>
+                <article class="item">
+                    <h3>Teaching Assistant, General Chemistry Experiment (Laboratory)</h3>
+                    <p class="meta">Department of Chemistry, KAIST | Spring 2022</p>
+                </article>
+            </section>
+
+            <section id="references">
+                <h2>References</h2>
+                <article class="item">
+                    <h3>Prof. Sang Woo Han</h3>
+                    <p class="meta">Ph.D. Advisor | Department of Chemistry, KAIST</p>
+                    <p>Email: <a href="mailto:sangwoohan@kaist.ac.kr">sangwoohan@kaist.ac.kr</a></p>
+                    <p>Phone: +82-42-350-2812</p>
+                </article>
+            </section>
+        </div>
+
+        <aside aria-label="Profile summary">
+            <h2 class="sidebar-title">Profile</h2>
+            <ul class="sidebar-list">
+                <li><strong>Affiliation</strong><br>Nanotectonics Laboratory, KAIST</li>
+                <li><strong>Field</strong><br>Chemistry, nanomaterials, catalysis</li>
+                <li><strong>Degree Track</strong><br>Ph.D. candidate, 2022-2028</li>
             </ul>
-        </section>
 
-        <section id="honors-awards">
-            <h2>Honors & Awards</h2>
-            <div class="item">
-                <div class="item-title">Best Poster Award [cite: 17]</div>
-                <div class="item-meta">Bulletin of the Korean Chemical Society (BKCS) | Jul. 2025 [cite: 17]</div>
-                <div>Korean Chemical Society (KCS), Materials Chemistry Division Summer Symposium [cite: 18]</div>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="item">
-                <div>S. B. Choi, B. S. Goo, K. H. Cho, S. Lee, Y. Kim, Y. Kwon, J. W. Baek, S. Han, Y. M. Rhee*, and S. W. Han* “Controlling the Chemoselectivity of Palladium Nanocatalysts with Halobenzene Surface Ligands for Alkyne Semihydrogenation”, ACS Catal. 2026, submitted. [cite: 20, 21]</div>
-            </div>
-            <div class="item">
-                <div>Y. Kwon, S. B. Choi, M. Kim, B. S. Goo, Y. W. Lee, J. W. Hong, and S. W. Han* “One-Pot Synthesis of Bicontinuous Palladium Nanocubes with Distinct Catalytic Properties for Various Electrocatalysis and Heterogeneous Catalysis”, Nano Lett. 2025, 25 (3), 1226–1232. [cite: 22, 23]</div>
-            </div>
-        </section>
-
-        <section id="patents">
-            <h2>Patents</h2>
-            <div class="item">
-                <div>S.W. Han, B. S. Goo, K. H. Cho, S. B. Choi, S. Lee, Y. Kim, J. W. Baek, S. Han, Y. M. Rhee “Metal nanoparticle catalyst, method for their preparation, and method for the synthesis of alkene compounds using the same”, 10-2878255, Korea [cite: 25]</div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Research Skills</h2>
-            <ul>
-                <li><strong>Synthesis of Materials:</strong> Synthesis of nanoparticles (e.g. Au, Ag, Pd, Pt, silica) and metal–organic frameworks (e.g. ZIF-8, ZIF-67, bio-MOF) [cite: 30]</li>
-                <li><strong>Characterization:</strong> SEM, TEM (EDS analysis, tomography), XPS, UPS, XRD (thin film, powder), GC–Mass, ICP–OES, FT-IR, DLS, UV–Vis spectroscopy, Raman spectroscopy, NMR (1H, 13C, qNMR) [cite: 31]</li>
-                <li><strong>Computational Methods:</strong> DFT calculations using Quantum ESPRESSO, molecular dynamics simulation using LAMMPS [cite: 32]</li>
+            <h2 class="sidebar-title">Methods</h2>
+            <ul class="tags">
+                <li>Nanoparticle synthesis</li>
+                <li>Catalysis</li>
+                <li>TEM</li>
+                <li>XPS</li>
+                <li>XRD</li>
+                <li>GC-MS</li>
+                <li>DFT</li>
+                <li>MD</li>
             </ul>
-        </section>
 
-        <section id="teaching">
-            <h2>Teaching Experience</h2>
-            <div class="item">
-                <div class="item-title">Teaching Assistant (Theory) - General Chemistry I [cite: 34, 35]</div>
-                <div class="item-meta">Department of Chemistry, KAIST | Spring 2023, Spring 2024, Spring 2025 [cite: 34, 35]</div>
+            <div class="callout" style="margin-top: 22px;">
+                Research centered on structure-controlled nanomaterials and catalyst design.
             </div>
-            <div class="item">
-                <div class="item-title">Teaching Assistant (Laboratory) - Advanced Chemistry Experiment [cite: 38, 39]</div>
-                <div class="item-meta">Department of Chemistry, KAIST | Fall 2022, Fall 2023, Fall 2024 [cite: 38, 39]</div>
-            </div>
-            <div class="item">
-                <div class="item-title">Teaching Assistant (Laboratory) - General Chemistry Experiment [cite: 36, 37]</div>
-                <div class="item-meta">Department of Chemistry, KAIST | Spring 2022 [cite: 36, 37]</div>
-            </div>
-        </section>
-        
-        <section id="references">
-            <h2>References</h2>
-            <div class="item">
-                <div class="item-title">Prof. Sang Woo Han (Ph.D. Advisor) [cite: 41]</div>
-                <div>Department of Chemistry, KAIST [cite: 42]</div>
-                <div>Email: <a href="mailto:sangwoohan@kaist.ac.kr">sangwoohan@kaist.ac.kr</a> [cite: 43]</div>
-                <div>Phone: +82-42-350-2812 [cite: 44]</div>
-            </div>
-        </section>
-    </div>
+        </aside>
+    </main>
 
+    <footer>
+        <p>&copy; 2026 Su Bin Choi. Last updated June 2026.</p>
+    </footer>
 </body>
 </html>
